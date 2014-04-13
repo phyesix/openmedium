@@ -51,7 +51,7 @@
 	@media screen and (min-width: 961px) {
 		<?php if(is_home() || is_archive() || is_search()): ?>
 		.page-wrap {
-			float: right;
+			width: 100%;
 		}
 		<?php endif; ?>
 		<?php if(is_single() || is_page()): ?>
@@ -85,6 +85,7 @@
 		<ul class="nav-list">
 			<!--<li><span class="icon-search search-icon"></span></li>-->
 			<li><a href="<?php echo home_url() ?>" ><span class="icon-home"></span>Anasayfa</a></li>
+			<li><a href="http://isdeneyimlerim.com/wp-login.php?loginTwitter=1&redirect=http://isdeneyimlerim.com" onclick="window.location = 'http://isdeneyimlerim.com/wp-login.php?loginTwitter=1&redirect='+window.location.href; return false;" ><span class="icon-twitter"></span>Twitter ile Giriş Yap</a></li>
 			<?php
 			echo !empty($aboutme)?'<li><a href="'.get_permalink($aboutme).'" ><span class="icon-user"></span>About Me</a></li>':"" ;
 			$defaults = array(
@@ -106,15 +107,17 @@
 
 	<div class="wrapper">
 		<a href="#nav" id="nav-toggle" class="do-not-print"><img src="<?php echo !empty($navicon)?$navicon:bloginfo('stylesheet_directory')."/images/navicon.png" ?>" style="width:30px;height:30px;"></a>
+		<a class="nav-rss btn" href="<?php bloginfo('rss2_url') ?>"><i class="icon-feed"></i> RSS ile Takip Et</a>
 		<?php if(is_home() || is_archive() || is_search()): ?>
 		<aside id="cover">
-			<div class="cover-body" style="background-image:url('<?php bloginfo('template_url')?>/images/cover.jpg');">
+			<div class="cover-body" style="background-image:url('<?php bloginfo('template_url')?>/images/cover.jpg'); left: 0!important;">
 				<div class="cover-body-inner">
 					<h1 class="cover-title"><?php bloginfo('name') ?></h1>
 					<p class="cover-description"><?php bloginfo('description') ?></p>
-					<div class="cover-bottom">
+					<a class="btn" href="#">Hakkında</a>
+					<!-- <div class="cover-bottom">
 						<?php if(is_home() || is_tag() || is_category() || is_search()): ?>
-							<a class="btn" href="<?php bloginfo('rss2_url') ?>" style="background-color:#57ad68;color:#fff;"><i class="icon-feed"></i> RSS ile Takip Et</a>
+							 <a class="btn" href="<?php bloginfo('rss2_url') ?>"><i class="icon-feed"></i> RSS ile Takip Et</a>
 						<?php endif; ?>
 
 						<?php if(is_year()): ?>
@@ -126,7 +129,7 @@
 							<?php $month = get_the_time('m'); $back_month = $month-1; $next_month = $month+1; ?>
 							<span class="archive-name"><a style="background:transparent;float:left;" href="<?php echo ($back_month == 00)?get_month_link($year-1,'12'):get_month_link($year,$back_month) ?>"><i class="icon-chevron-left"></i></a><?php echo $month ?><a style="background:transparent;float:right;" href="<?php echo ($next_month == 13)?get_month_link($year+1,'12'):get_month_link($year,$next_month) ?>"><i class="icon-chevron-right"></i></a></span>
 						<?php endif; ?>
-					</div>
+					</div>-->
 				</div>
 			</div>
 		</aside>
