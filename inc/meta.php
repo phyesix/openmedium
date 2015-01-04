@@ -6,9 +6,9 @@
 		}
 		
 		the_category(', ');
-		echo ' kategorisi';
+		echo ' kategorisi hakkında yazılmıştır. Yaklaşık ';
 	}else{
 		echo 'WordPress Sayfası';
 	} ?>
-	 - <span class="meta-time"><i class="icon-bookmark"></i> <?php echo floor(wcount() / 200) + 1 . ' dakika okuma süresi' ?></span>
+	<span class="meta-time"><strong><?php echo floor(wcount() / 200) + 1 . ' ' ?> dakika</strong> okuma süresi öngörülmektedir.</span>
 </div>

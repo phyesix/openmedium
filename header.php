@@ -76,7 +76,6 @@
 
 <?php wp_head(); ?>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/script.js"></script>
-<script type="text/javascript" src="<?php echo (is_single())?bloginfo('template_url')."/js/comment.js":"" ?>"></script>
 <!--[if lte IE 7]><script src="<?php bloginfo('template_url'); ?>/icomoon/lte-ie7.js"></script><![endif]-->
 </head>
 
@@ -106,33 +105,34 @@
 
 
 	<div class="wrapper">
-		<a href="#nav" id="nav-toggle" class="do-not-print"><img src="<?php echo !empty($navicon)?$navicon:bloginfo('stylesheet_directory')."/images/navicon.png" ?>" style="width:30px;height:30px;"></a>
-		<a class="nav-rss btn" href="<?php bloginfo('rss2_url') ?>"><i class="icon-feed"></i> RSS ile Takip Et</a>
-		<?php if(is_home() || is_archive() || is_search()): ?>
-		<aside id="cover">
-			<div class="cover-body" style="background-image:url('<?php bloginfo('template_url')?>/images/cover.jpg'); left: 0!important;">
-				<div class="cover-body-inner">
-					<h1 class="cover-title"><?php bloginfo('name') ?></h1>
-					<p class="cover-description"><?php bloginfo('description') ?></p>
-					<a class="btn" href="#">Hakkında</a>
-					<!-- <div class="cover-bottom">
-						<?php if(is_home() || is_tag() || is_category() || is_search()): ?>
-							 <a class="btn" href="<?php bloginfo('rss2_url') ?>"><i class="icon-feed"></i> RSS ile Takip Et</a>
-						<?php endif; ?>
+		
+			<a href="#nav" id="nav-toggle" class="do-not-print"><div class="header-logo-area">O</div></a>
+			<a class="nav-rss btn" href="<?php bloginfo('rss2_url') ?>"><i class="icon-feed"></i> RSS ile Takip Et</a>
+			<?php if(is_home() || is_archive() || is_search()): ?>
+			<aside id="cover">
+				<div class="cover-body" style="background-image:url('<?php bloginfo('template_url')?>/images/cover.jpg'); left: 0!important;">
+					<div class="cover-body-inner">
+						<h1 class="cover-title"><?php bloginfo('name') ?></h1>
+						<p class="cover-description"><?php bloginfo('description') ?></p>
+						<a class="btn" href="#">Hakkında</a>
+						<!-- <div class="cover-bottom">
+							<?php if(is_home() || is_tag() || is_category() || is_search()): ?>
+								 <a class="btn" href="<?php bloginfo('rss2_url') ?>"><i class="icon-feed"></i> RSS ile Takip Et</a>
+							<?php endif; ?>
 
-						<?php if(is_year()): ?>
-							<?php $year = get_the_time('Y'); ?>
-							<span class="archive-name"><a style="background:transparent;float:left;" href="<?php echo get_year_link($year-1) ?>"><i class="icon-chevron-left"></i></a><?php echo $year ?><a style="background:transparent;float:right;" href="<?php echo get_year_link($year+1) ?>"><i class="icon-chevron-right"></i></a></span>
-						<?php endif; ?>
+							<?php if(is_year()): ?>
+								<?php $year = get_the_time('Y'); ?>
+								<span class="archive-name"><a style="background:transparent;float:left;" href="<?php echo get_year_link($year-1) ?>"><i class="icon-chevron-left"></i></a><?php echo $year ?><a style="background:transparent;float:right;" href="<?php echo get_year_link($year+1) ?>"><i class="icon-chevron-right"></i></a></span>
+							<?php endif; ?>
 
-						<?php if(is_month() || is_day()): ?>
-							<?php $month = get_the_time('m'); $back_month = $month-1; $next_month = $month+1; ?>
-							<span class="archive-name"><a style="background:transparent;float:left;" href="<?php echo ($back_month == 00)?get_month_link($year-1,'12'):get_month_link($year,$back_month) ?>"><i class="icon-chevron-left"></i></a><?php echo $month ?><a style="background:transparent;float:right;" href="<?php echo ($next_month == 13)?get_month_link($year+1,'12'):get_month_link($year,$next_month) ?>"><i class="icon-chevron-right"></i></a></span>
-						<?php endif; ?>
-					</div>-->
+							<?php if(is_month() || is_day()): ?>
+								<?php $month = get_the_time('m'); $back_month = $month-1; $next_month = $month+1; ?>
+								<span class="archive-name"><a style="background:transparent;float:left;" href="<?php echo ($back_month == 00)?get_month_link($year-1,'12'):get_month_link($year,$back_month) ?>"><i class="icon-chevron-left"></i></a><?php echo $month ?><a style="background:transparent;float:right;" href="<?php echo ($next_month == 13)?get_month_link($year+1,'12'):get_month_link($year,$next_month) ?>"><i class="icon-chevron-right"></i></a></span>
+							<?php endif; ?>
+						</div>-->
+					</div>
 				</div>
-			</div>
-		</aside>
+			</aside>
 	<?php endif; ?>
 	<?php if (!is_single() && !is_page()) {
 		echo '<div class="page-wrap">';

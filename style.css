@@ -1,3 +1,43 @@
+@font-face {
+    font-family: 'freighttext_prosemibold';
+    src: url('fonts/freighttext_pro_semibold-webfont.eot');
+    src: url('fonts/freighttext_pro_semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/freighttext_pro_semibold-webfont.woff') format('woff'),
+         url('fonts/freighttext_pro_semibold-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'freighttext_promedium';
+    src: url('fonts/freighttext_pro_medium-webfont.eot');
+    src: url('fonts/freighttext_pro_medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/freighttext_pro_medium-webfont.woff') format('woff'),
+         url('fonts/freighttext_pro_medium-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'freighttext_prolight';
+    src: url('fonts/freighttext_pro_light-webfont.eot');
+    src: url('fonts/freighttext_pro_light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/freighttext_pro_light-webfont.woff') format('woff'),
+         url('fonts/freighttext_pro_light-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'freighttext_probook';
+    src: url('fonts/freighttext_pro_book-webfont.eot');
+    src: url('fonts/freighttext_pro_book-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/freighttext_pro_book-webfont.woff') format('woff'),
+         url('fonts/freighttext_pro_book-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 * {
 	margin: 0;
@@ -9,7 +49,7 @@ html {
 body {
 	height: 100%;
 	overflow-x: hidden;
-	font-family: "freight-sans-pro","Myriad Pro","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+	font-family: 'freighttext_promedium';
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	font-weight: 400;
@@ -21,25 +61,21 @@ body {
 a, a:visited, a:hover, a:active {
 	color: inherit;
 }
-a:hover {
-	color: #57ad68;
-	transition: all 0.2s ease;
-}
 ul, ol {
 	list-style: none;
 	padding: 0;
 	margin: 0;
-	font-family: "freight-sans-pro","Myriad Pro","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+	font-family: 'freighttext_promedium';
 	font-weight: 400;
 	font-style: normal;
-	font-size: 22px;
+	font-size: 20px;
 	margin-bottom: 30px;
 }
 ul.sub-menu {
 	margin-left: 15px;
 }
 li {
-	font-family: "freight-sans-pro","Myriad Pro","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+	font-family: 'freighttext_promedium';
 	display: list-item;
 	
 	margin-left: 30px;
@@ -243,7 +279,7 @@ html[xmlns] .clearfix {
 .author-picture {
 	float: left;
 	display: block;
-	margin-right: 10px;
+	/*margin-right: 10px;*/
 }
 .author-name {
 	display: block;
@@ -251,7 +287,7 @@ html[xmlns] .clearfix {
 	font-weight: 700;
 	color: #333332;
 	line-height: 1.2;
-	min-width: 100%;
+	/*min-width: 100%;*/
 	text-align: right;
 }
 .bio {
@@ -345,12 +381,14 @@ a#nav-toggle {
 	color: white;
 	font-weight: bolder;
 	z-index: 999;
+	border-bottom: 5px solid #FFF;
 }
 .nav-rss {
 	position: fixed;
 	top: 10px;
 	right: 10px;
 	z-index: 999;
+	color: #FFF;
 }
 .post-content {
 	line-height: 1.45;
@@ -358,11 +396,11 @@ a#nav-toggle {
 	
 }
 .post-content p {
-	font-family: "ff-tisa-web-pro",Georgia,Cambria,"Times New Roman",Times,serif;
+	font-family: 'freighttext_promedium';
 	letter-spacing: normal;
 	font-weight: 400;
 	font-style: normal;
-	font-size: 22px;
+	font-size: 20px;
 	line-height: 1.45;
 	margin: 15px 0 !important;
 }
@@ -385,10 +423,11 @@ a#nav-toggle {
 	text-align: right;
 	border-top: 1px #e3e3e3 solid;
 	padding: 10px 0;
+	font-size: 14px;
 }
 p { 
 	margin: 0 0 10px 0; 
-	font-size: 22px;
+	font-size: 20px;
 }
 .credit {
 	font-size: 12px;
@@ -426,6 +465,14 @@ h4 {
 	font-size: 25px;
 	margin: 10px 0;
 }
+.post-date {
+	font-size: 14px;
+	line-height: 1.4;
+	color: #666665;
+	word-wrap: break-word;
+	margin-bottom: 20px;
+	font-style: italic;
+}
 .index-box {
 	padding: 0 0 35px 0;
 border-bottom: 1px solid #f2f2f0;
@@ -436,15 +483,24 @@ word-wrap: break-word;
   -moz-transition: opacity .5s linear;
   -o-transition: opacity .5s linear;
   transition: opacity .5s linear;
+
+	
+}
+
+.bio-and-post-group .index-box{
+	width: 640px;
+	margin: 0 auto !important;
+	float: none !important;
 }
 .index-box  p {
 	margin-bottom: 5px;
 }
 .post-title {
-	font-size: 50px;
+	font-size: 30px;
 	font-weight: 700;
 	line-height: 1;	
 	margin-top: 15px;
+	font-family: "freight-sans-pro","Myriad Pro","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
 }
 
 @media screen and (max-width: 960px) {
@@ -487,19 +543,38 @@ word-wrap: break-word;
 		overflow: hidden;
 	}
 	.bio {
+		position: fixed;
+		z-index: 999;
 		float: left;
-		width: 23%;
-		margin-top: 10px;
+		width: 600px;
+		margin-left: 75px;
+		margin-top: 9px;
+		border-left: 1px solid #FFF;
+		padding-left: 20px;
+		top: 0;
+		/*width: 23%;
+		margin-top: 10px;*/
 	}
-	.author-picture, .author-name, .author-bio, .post-date {
-		float: right;
-		clear: right;
+	.author-picture {
+		float: left;
+		color: #FFF;
+		display: inline-block;
+		width: 50px;
+		margin-top: 4px;
 	}
-	.avatar-73 {
+	.author-name, .author-bio, .post-date {
+		float: left;
+		color: #FFF;
+		display: inline-block;
+		text-align: left;
+		margin-right: 10px;
+		margin-top: 7px;
+	}
+	.avatar-32 {
 		border-radius: 50%;
 	}
 	.author-bio {
-		color: #818181;
+		/*color: #818181;*/
 		font-weight: 400;
 		text-align: right;
 		margin-bottom: 10px;
@@ -544,14 +619,7 @@ word-wrap: break-word;
 	}
 }
 
-.post-date {
-	font-size: 14px;
-	line-height: 1.4;
-	color: #666665;
-	word-wrap: break-word;
-	margin-bottom: 20px;
-	font-style: italic;
-}
+
 
 
 .post-socialarea {
@@ -585,7 +653,7 @@ width: 100%;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-	font-family: "freight-sans-pro","Myriad Pro","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+	font-family: 'freighttext_promedium';
 	font-weight: 500;
 	font-style: normal;
 	-webkit-box-sizing: border-box;
@@ -623,7 +691,7 @@ width: 100%;
 	position: absolute;
 	top: 0;
 	right: -35px;
-	font-family: "freight-sans-pro","Myriad Pro","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+	font-family: 'freighttext_promedium';
 	font-weight: 500;
 	font-style: normal;
 	color: #57ad68 !important;
@@ -668,15 +736,53 @@ span[class^="ss-icon-"] {
 
 
 .home .post-title  {
-	font-size: 32px;
+	font-size: 28px;
 }
 .single-post .post .post-content  a{
-	border-bottom: 2px dotted;
+	text-decoration: none;
+	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(0,0,0,0.6) 50%);
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.6) 50%);
+	background-repeat: repeat-x;
+	background-size: 2px 2px;
+	background-position: 0 24px;
 }
 .single-post .post .post-content  blockquote{
 	border-left: 3px solid #57ad68;
-padding-left: 20px;
-margin-left: -26px;
+	padding-left: 20px;
+	margin-left: -26px;
 
-padding-bottom: 3px;
+	padding-bottom: 3px;
 }
+
+.header-logo-area {
+	font-size: 25px;
+	text-align: center;
+}
+
+.header-background {
+	display: none;
+	z-index: 500;
+	width: 100%;
+	font-size: 14px;
+	color: rgba(0,0,0,0.3);
+	pointer-events: none;
+	font-family: "jaf-bernino-sans","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+	letter-spacing: -0.02em;
+	font-weight: 400;
+	font-style: normal;
+	
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	
+	position: fixed;
+	
+	background: rgba(255,255,255,.8);
+	-webkit-box-shadow: 0 0 1px rgba(0,0,0,0.15);
+	-moz-box-shadow: 0 0 1px rgba(0,0,0,0.15);
+	box-shadow: 0 0 1px rgba(0,0,0,0.15);
+	
+	height: 60px;
+}
+
+

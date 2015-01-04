@@ -23,6 +23,20 @@
 
 	<?php endwhile; ?>
 
+
+
+<?php if ( have_posts() ) : ?>
+<?php while ( have_posts() ) : the_post();  ?>
+<?php endwhile; ?>
+<div class="clearfix" style="margin: 20px 0; clear: both; width: 100%;">
+	<div class="nav-previous alignleft" style="float: left"><?php next_posts_link( 'Eski Yazılar' ); ?></div>
+	<div class="nav-next alignright" style="float: right"><?php previous_posts_link( 'Yeni Yazılar' ); ?></div>
+</div>
+<?php else : ?>
+<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+<?php endif; ?>
+
+
 <?php else : ?>
 
 	<h2>İlgili yazı bulunamadı.</h2>
