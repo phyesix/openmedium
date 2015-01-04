@@ -25,7 +25,7 @@
 						<?php the_tags('Etiketler: ', ', ', '<br />'); ?>
 					</div>
 					
-					<div class="post-socialarea clearfix">
+					<div class="post-socialarea">
 						<div class="post-social-like">
 							<?php if( function_exists('dot_irecommendthis') ) dot_irecommendthis(); ?>
 						</div>
